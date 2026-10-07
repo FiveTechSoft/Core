@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-07T06:06:05.569Z",
+ "ejecutado_en": "2026-10-07T13:31:07.128Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 32,
+   "ms": 125,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,13 +18,13 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 36459,
+   "ms": 25254,
    "resultado": {
     "ultima_llamada": {
-     "ms": 36447,
+     "ms": 6188,
      "ok": true,
-     "modelo": "exo-free",
-     "respuesta": "Solo **SKU-451** tiene riesgo de rotura. Ya hay una propuesta pendiente para este artículo (PROP-001), así que **no he creado otra** para no duplicarla.\n\n**Estado del stock (modo supervisado)**\n\n| SKU | Artículo | Disponible | Punto de reposición | ¿Necesita reposición? |\n|---|---|---|---|---|\n| SKU-451 | Tejido técnico azul, rollo | 4 (18 en almacén − 14 reservados) | 20 | **Sí** |\n| SKU-208 | Ci",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "Estado exacto en SQLite y modo actual:\n\n- **Modo: Supervisado.** Toda propuesta local queda en `pendiente` y requiere revisión humana antes de cualquier acción; **no se ha comprado ni recibido mercancía**.\n- **PROP-001** (SKU-451, cantidad propuesta **80**, estado **`pendiente`**) sigue vigente. La herramienta no ha creado una segunda propuesta porque ya existe una propuesta pendiente para SKU-451",
      "herramientas": []
     },
     "estado_agente": {
@@ -36,13 +36,13 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 13323,
+   "ms": 22234,
    "resultado": {
     "ultima_llamada": {
-     "ms": 13313,
+     "ms": 22222,
      "ok": true,
-     "modelo": "exo-free",
-     "respuesta": "# Pedidos y riesgo de stock\n\n## Resumen de pedidos\n\n| Pedido | SKU | Producto | Cantidad | Estado | Región |\n|---|---|---|---|---|---|\n| PED-1001 | SKU-451 | Tejido técnico azul, rollo | 12 | confirmado | España |\n| PED-1001 | SKU-208 | Cierre industrial, caja | 5 | confirmado | España |\n| PED-1002 | SKU-451 | Tejido técnico azul, rollo | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | Tejido técn",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "**Resumen de pedidos vigentes**\n\n- **PED-1001 (España, confirmado):** 12 uds. SKU-451 + 5 uds. SKU-208\n- **PED-1002 (LATAM, pendiente):** 25 uds. SKU-451\n- **PED-1003 (España, pendiente):** 2 uds. SKU-451\n\n**Situación de stock**\n\n| SKU | Disponible | Reservado | En existencia | Punto de reposición |\n|---|---|---|---|---|\n| SKU-451 (Tejido técnico azul) | 4 | 14 | 18 | 20 |\n| SKU-208 (Cierre indust",
      "herramientas": []
     },
     "estado_agente": {
@@ -54,13 +54,13 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 7385,
+   "ms": 18864,
    "resultado": {
     "ultima_llamada": {
-     "ms": 7374,
+     "ms": 18852,
      "ok": true,
-     "modelo": "exo-free",
-     "respuesta": "**Propuesta pendiente: PROP-001 (SKU-451, Tejido técnico azul, rollo, 80 uds.)**\n\n| Proveedor | Plazo | Coste unitario | Pedido mínimo | Coste de 80 uds. |\n|---|---|---|---|---|\n| PROV-01 Textiles Sierra S.L. | 4 días | 3.400 céntimos (34,00) | 10 | 272.000 céntimos (2.720,00) |\n\n- **Único proveedor:** PROV-01 es el único con SKU-451 en los datos vigentes. No hay alternativa que comparar para esta",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "Con los datos vigentes hay una única propuesta pendiente:\n\n**PROP-001 — SKU-451 (Tejido técnico azul, rollo)**\n- Cantidad propuesta: 80 unidades\n- Estado: pendiente\n- Datos de stock: 18 en mano, 14 reservados, 4 disponibles; punto de reposición 20; stock objetivo 80. Necesita reposición.\n\n**Comparativa de proveedores para SKU-451**\n- Solo hay un proveedor con SKU-451 en el catálogo: **PROV-01, Tex",
      "herramientas": []
     },
     "estado_agente": {
@@ -72,24 +72,33 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 36447,
+   "ms": 19053,
    "ok": true,
-   "modelo": "exo-free",
-   "respuesta": "Solo **SKU-451** tiene riesgo de rotura. Ya hay una propuesta pendiente para este artículo (PROP-001), así que **no he creado otra** para no duplicarla.\n\n**Estado del stock (modo supervisado)**\n\n| SKU | Artículo | Disponible | Punto de reposición | ¿Necesita reposición? |\n|---|---|---|---|---|\n| SKU-451 | Tejido técnico azul, rollo | 4 (18 en almacén − 14 reservados) | 20 | **Sí** |\n| SKU-208 | Ci",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Revisión del stock con los datos vigentes:\n\n- **SKU-451** (Tejido técnico azul): disponible **4** (18 en stock − 14 reservados), punto de reposición 20, objetivo 80. Hay riesgo real de rotura: la demanda comprometida es PED-1001 (12, confirmado) + PED-1002 (25, pendiente) + PED-1003 (2, pendiente) = **39 unidades frente a 4 disponibles**. `needs_restock = 1`.\n- **SKU-208**: disponible 31, punto de",
+   "herramientas": [
+    "proponer_reposicion"
+   ]
+  },
+  {
+   "ms": 6188,
+   "ok": true,
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Estado exacto en SQLite y modo actual:\n\n- **Modo: Supervisado.** Toda propuesta local queda en `pendiente` y requiere revisión humana antes de cualquier acción; **no se ha comprado ni recibido mercancía**.\n- **PROP-001** (SKU-451, cantidad propuesta **80**, estado **`pendiente`**) sigue vigente. La herramienta no ha creado una segunda propuesta porque ya existe una propuesta pendiente para SKU-451",
    "herramientas": []
   },
   {
-   "ms": 13313,
+   "ms": 22222,
    "ok": true,
-   "modelo": "exo-free",
-   "respuesta": "# Pedidos y riesgo de stock\n\n## Resumen de pedidos\n\n| Pedido | SKU | Producto | Cantidad | Estado | Región |\n|---|---|---|---|---|---|\n| PED-1001 | SKU-451 | Tejido técnico azul, rollo | 12 | confirmado | España |\n| PED-1001 | SKU-208 | Cierre industrial, caja | 5 | confirmado | España |\n| PED-1002 | SKU-451 | Tejido técnico azul, rollo | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | Tejido técn",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "**Resumen de pedidos vigentes**\n\n- **PED-1001 (España, confirmado):** 12 uds. SKU-451 + 5 uds. SKU-208\n- **PED-1002 (LATAM, pendiente):** 25 uds. SKU-451\n- **PED-1003 (España, pendiente):** 2 uds. SKU-451\n\n**Situación de stock**\n\n| SKU | Disponible | Reservado | En existencia | Punto de reposición |\n|---|---|---|---|---|\n| SKU-451 (Tejido técnico azul) | 4 | 14 | 18 | 20 |\n| SKU-208 (Cierre indust",
    "herramientas": []
   },
   {
-   "ms": 7374,
+   "ms": 18852,
    "ok": true,
-   "modelo": "exo-free",
-   "respuesta": "**Propuesta pendiente: PROP-001 (SKU-451, Tejido técnico azul, rollo, 80 uds.)**\n\n| Proveedor | Plazo | Coste unitario | Pedido mínimo | Coste de 80 uds. |\n|---|---|---|---|---|\n| PROV-01 Textiles Sierra S.L. | 4 días | 3.400 céntimos (34,00) | 10 | 272.000 céntimos (2.720,00) |\n\n- **Único proveedor:** PROV-01 es el único con SKU-451 en los datos vigentes. No hay alternativa que comparar para esta",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Con los datos vigentes hay una única propuesta pendiente:\n\n**PROP-001 — SKU-451 (Tejido técnico azul, rollo)**\n- Cantidad propuesta: 80 unidades\n- Estado: pendiente\n- Datos de stock: 18 en mano, 14 reservados, 4 disponibles; punto de reposición 20; stock objetivo 80. Necesita reposición.\n\n**Comparativa de proveedores para SKU-451**\n- Solo hay un proveedor con SKU-451 en el catálogo: **PROV-01, Tex",
    "herramientas": []
   }
  ],
@@ -100,7 +109,11 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 500
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
@@ -127,10 +140,6 @@
   {
    "tipo": "consola",
    "mensaje": "Failed to load resource: net::ERR_FAILED"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 500 ()"
   }
  ],
  "por_agente": [
@@ -149,31 +158,31 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-07T06:06:05.330Z",
+   "occurred_at": "2026-10-07T13:31:06.904Z",
    "actor": "GAMMA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "GAMMA",
-   "details_json": "{\"model\":\"exo-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-07T06:05:57.944Z",
+   "occurred_at": "2026-10-07T13:30:48.038Z",
    "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "BETA",
-   "details_json": "{\"model\":\"exo-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-07T06:05:44.621Z",
+   "occurred_at": "2026-10-07T13:30:25.806Z",
    "actor": "ALPHA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "ALPHA",
-   "details_json": "{\"model\":\"exo-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-07T06:05:08.160Z",
+   "occurred_at": "2026-10-07T13:30:00.534Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
