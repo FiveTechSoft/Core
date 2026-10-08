@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-08T13:37:05.183Z",
+ "ejecutado_en": "2026-10-08T23:24:30.226Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 32,
+   "ms": 15,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,13 +18,13 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 50021,
+   "ms": 34308,
    "resultado": {
     "ultima_llamada": {
-     "ms": 15109,
+     "ms": 2415,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "**Resumen de revisión de stock (datos vigentes)**\n\n| SKU | Descripción | On hand | Reservado | Disponible | P. reposición | Objetivo | Estado |\n|---|---|---|---|---|---|---|---|\n| SKU-451 | Tejido técnico azul, rollo | 18 | 14 | 4 | 20 | 80 | ⚠️ Bajo |\n| SKU-208 | Cierre industrial, caja | 36 | 5 | 31 | 15 | 50 | OK |\n| SKU-713 | Forro reciclado, rollo | 26 | 2 | 24 | 12 | 40 | OK |\n\n**Riesgo de r",
+     "respuesta": "No he podido crear la propuesta: la herramienta rechazó mi llamada por un fallo de formato en el campo `reason` (exigía un texto de 1 a 500 caracteres y la plataforma no lo validó). **No consta ninguna propuesta nueva en el sistema por mi parte.** Reintentaré.\n\nMientras tanto, te dejo el análisis de riesgo real que sí puedo sostener con los datos:\n\n**Riesgo de rotura: SKU-451 (Tejido técnico azul,",
      "herramientas": []
     },
     "estado_agente": {
@@ -36,13 +36,13 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 11921,
+   "ms": 6206,
    "resultado": {
     "ultima_llamada": {
-     "ms": 11910,
+     "ms": 6197,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "## Resumen de cartera\n\n**3 pedidos, 4 líneas, 44 unidades** — todas las líneas están en **España** salvo una:\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n- **SKU-451 concentra el 89 ",
+     "respuesta": "## Resumen de cartera\n\n**3 pedidos, 4 líneas, 44 unidades.** Tres SKUs en cartera, pero solo dos con demanda abierta.\n\n| Pedido | SKU | Uds. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n- **Confirmado:** 17 ",
      "herramientas": []
     },
     "estado_agente": {
@@ -54,13 +54,13 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 22027,
+   "ms": 5148,
    "resultado": {
     "ultima_llamada": {
-     "ms": 22017,
+     "ms": 5141,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "## Comparativa de proveedores — propuestas pendientes\n\n### 1. Alcance del análisis\n\nSolo hay **una propuesta pendiente**: `PROP-001` (SKU-451, Tejido técnico azul). Sobre ese SKU, el catálogo contiene **un único proveedor**.\n\n### 2. Proveedor disponible para PROP-001 / SKU-451\n\n| Proveedor | Plazo | Coste unitario | MOQ | Coste total (80 uds.) |\n|---|---|---|---|---|\n| PROV-01 · Textiles Sierra S.",
+     "respuesta": "## Propuestas pendientes: solo PROP-001\n\n**Única propuesta en estado pendiente del contexto:** PROP-001 — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80 rollos.\n\n### Comparativa de proveedores para SKU-451\n\nEn los datos vigentes existe **un solo proveedor homologado para el SKU-451**, por lo que no hay una comparación real que hacer:\n\n| Proveedor | SKU | Plazo (días) | Coste unitario ",
      "herramientas": []
     },
     "estado_agente": {
@@ -72,7 +72,7 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 34899,
+   "ms": 31881,
    "ok": true,
    "modelo": "space-bunny-free",
    "respuesta": "",
@@ -81,24 +81,24 @@
    ]
   },
   {
-   "ms": 15109,
+   "ms": 2415,
    "ok": true,
    "modelo": "space-bunny-free",
-   "respuesta": "**Resumen de revisión de stock (datos vigentes)**\n\n| SKU | Descripción | On hand | Reservado | Disponible | P. reposición | Objetivo | Estado |\n|---|---|---|---|---|---|---|---|\n| SKU-451 | Tejido técnico azul, rollo | 18 | 14 | 4 | 20 | 80 | ⚠️ Bajo |\n| SKU-208 | Cierre industrial, caja | 36 | 5 | 31 | 15 | 50 | OK |\n| SKU-713 | Forro reciclado, rollo | 26 | 2 | 24 | 12 | 40 | OK |\n\n**Riesgo de r",
+   "respuesta": "No he podido crear la propuesta: la herramienta rechazó mi llamada por un fallo de formato en el campo `reason` (exigía un texto de 1 a 500 caracteres y la plataforma no lo validó). **No consta ninguna propuesta nueva en el sistema por mi parte.** Reintentaré.\n\nMientras tanto, te dejo el análisis de riesgo real que sí puedo sostener con los datos:\n\n**Riesgo de rotura: SKU-451 (Tejido técnico azul,",
    "herramientas": []
   },
   {
-   "ms": 11910,
+   "ms": 6197,
    "ok": true,
    "modelo": "space-bunny-free",
-   "respuesta": "## Resumen de cartera\n\n**3 pedidos, 4 líneas, 44 unidades** — todas las líneas están en **España** salvo una:\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n- **SKU-451 concentra el 89 ",
+   "respuesta": "## Resumen de cartera\n\n**3 pedidos, 4 líneas, 44 unidades.** Tres SKUs en cartera, pero solo dos con demanda abierta.\n\n| Pedido | SKU | Uds. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n- **Confirmado:** 17 ",
    "herramientas": []
   },
   {
-   "ms": 22017,
+   "ms": 5141,
    "ok": true,
    "modelo": "space-bunny-free",
-   "respuesta": "## Comparativa de proveedores — propuestas pendientes\n\n### 1. Alcance del análisis\n\nSolo hay **una propuesta pendiente**: `PROP-001` (SKU-451, Tejido técnico azul). Sobre ese SKU, el catálogo contiene **un único proveedor**.\n\n### 2. Proveedor disponible para PROP-001 / SKU-451\n\n| Proveedor | Plazo | Coste unitario | MOQ | Coste total (80 uds.) |\n|---|---|---|---|---|\n| PROV-01 · Textiles Sierra S.",
+   "respuesta": "## Propuestas pendientes: solo PROP-001\n\n**Única propuesta en estado pendiente del contexto:** PROP-001 — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80 rollos.\n\n### Comparativa de proveedores para SKU-451\n\nEn los datos vigentes existe **un solo proveedor homologado para el SKU-451**, por lo que no hay una comparación real que hacer:\n\n| Proveedor | SKU | Plazo (días) | Coste unitario ",
    "herramientas": []
   }
  ],
@@ -113,11 +113,11 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 503
+   "estado": 410
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 500
+   "estado": 400
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
@@ -163,11 +163,7 @@
   },
   {
    "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 503 ()"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 500 ()"
+   "mensaje": "Failed to load resource: the server responded with a status of 410 ()"
   }
  ],
  "por_agente": [
@@ -186,7 +182,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-08T13:37:04.980Z",
+   "occurred_at": "2026-10-08T23:24:30.063Z",
    "actor": "GAMMA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -194,7 +190,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-08T13:36:42.952Z",
+   "occurred_at": "2026-10-08T23:24:24.913Z",
    "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -202,7 +198,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-08T13:36:31.030Z",
+   "occurred_at": "2026-10-08T23:24:18.707Z",
    "actor": "ALPHA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -210,7 +206,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-08T13:35:41.008Z",
+   "occurred_at": "2026-10-08T23:23:44.396Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
