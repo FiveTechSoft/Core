@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-10T12:38:04.522Z",
+ "ejecutado_en": "2026-10-10T21:48:26.722Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
@@ -18,16 +18,14 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 35309,
+   "ms": 32619,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4153,
+     "ms": 3744,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "",
-     "herramientas": [
-      "proponer_reposicion"
-     ]
+     "respuesta": "No he podido registrar la propuesta: la herramienta rechazó el envío por un fallo de formato del campo `reason`, así que **no existe ninguna propuesta nueva en el sistema**. El estado real en SQLite sigue siendo el de `proposals`: una única entrada, PROP-001.\n\n## Revisión de stock disponible\n\n**SKU-451 — Tejido técnico azul, rollo**\n- On hand: 18 · Reservado: 14 · **Disponible: 4**\n- Punto de repo",
+     "herramientas": []
     },
     "estado_agente": {
      "actor": "ALPHA",
@@ -38,13 +36,13 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 13117,
+   "ms": 4096,
    "resultado": {
     "ultima_llamada": {
-     "ms": 13109,
+     "ms": 4083,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "## Resumen de pedidos (4 líneas / 3 pedidos)\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 Tejido técnico azul | 12 | confirmado | España |\n| PED-1001 | SKU-208 Cierre industrial | 5 | confirmado | España |\n| PED-1002 | SKU-451 Tejido técnico azul | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 Tejido técnico azul | 2 | pendiente | España |\n\n- 3 de las 4 lí",
+     "respuesta": "Resumen de pedidos (datos vigentes)\n\nPED-1001 — confirmado, España: 12 uds SKU-451 + 5 uds SKU-208.\nPED-1002 — pendiente, LATAM: 25 uds SKU-451.\nPED-1003 — pendiente, España: 2 uds SKU-451.\n\nTres pedidos, cuatro líneas. SKU-451 concentra las tres líneas (39 uds en total); SKU-208 aparece en una sola línea (5 uds).\n\nRiesgo de stock: SKU-451\n\nDisponible 4 rollos frente a punto de reposición 20 y obj",
      "herramientas": []
     },
     "estado_agente": {
@@ -56,13 +54,13 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 8985,
+   "ms": 4336,
    "resultado": {
     "ultima_llamada": {
-     "ms": 8977,
+     "ms": 4324,
      "ok": true,
      "modelo": "space-bunny-free",
-     "respuesta": "Resumen: solo hay una propuesta pendiente, PROP-001 (SKU-451, Tejido técnico azul, rollo, 80 unidades), y para ese SKU el contexto registra un único proveedor. No existe comparación posible de precios ni de plazos entre proveedores para esta propuesta.\n\nProveedor que corresponde para PROP-001\n- PROV-01 Textiles Sierra S.L.: sirve SKU-451, 4 días de plazo, 3.400 céntimos por rollo, mínimo 10 unidad",
+     "respuesta": "Comparativa para la propuesta pendiente\n\nPROP-001 — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80, estado pendiente.\n\nProveedores que cubren SKU-451:\n- PROV-01 Textiles Sierra S.L.: 4 días de plazo, 3.400 céntimos por rollo (34,00 €), mínimo 10 unidades. Es el único proveedor de los datos vigentes para este SKU, por lo que no hay alternativa con la que comparar precio ni plazo.\n\nCost",
      "herramientas": []
     },
     "estado_agente": {
@@ -74,7 +72,7 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 31145,
+   "ms": 28862,
    "ok": true,
    "modelo": "space-bunny-free",
    "respuesta": "",
@@ -83,26 +81,24 @@
    ]
   },
   {
-   "ms": 4153,
+   "ms": 3744,
    "ok": true,
    "modelo": "space-bunny-free",
-   "respuesta": "",
-   "herramientas": [
-    "proponer_reposicion"
-   ]
-  },
-  {
-   "ms": 13109,
-   "ok": true,
-   "modelo": "space-bunny-free",
-   "respuesta": "## Resumen de pedidos (4 líneas / 3 pedidos)\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 Tejido técnico azul | 12 | confirmado | España |\n| PED-1001 | SKU-208 Cierre industrial | 5 | confirmado | España |\n| PED-1002 | SKU-451 Tejido técnico azul | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 Tejido técnico azul | 2 | pendiente | España |\n\n- 3 de las 4 lí",
+   "respuesta": "No he podido registrar la propuesta: la herramienta rechazó el envío por un fallo de formato del campo `reason`, así que **no existe ninguna propuesta nueva en el sistema**. El estado real en SQLite sigue siendo el de `proposals`: una única entrada, PROP-001.\n\n## Revisión de stock disponible\n\n**SKU-451 — Tejido técnico azul, rollo**\n- On hand: 18 · Reservado: 14 · **Disponible: 4**\n- Punto de repo",
    "herramientas": []
   },
   {
-   "ms": 8977,
+   "ms": 4083,
    "ok": true,
    "modelo": "space-bunny-free",
-   "respuesta": "Resumen: solo hay una propuesta pendiente, PROP-001 (SKU-451, Tejido técnico azul, rollo, 80 unidades), y para ese SKU el contexto registra un único proveedor. No existe comparación posible de precios ni de plazos entre proveedores para esta propuesta.\n\nProveedor que corresponde para PROP-001\n- PROV-01 Textiles Sierra S.L.: sirve SKU-451, 4 días de plazo, 3.400 céntimos por rollo, mínimo 10 unidad",
+   "respuesta": "Resumen de pedidos (datos vigentes)\n\nPED-1001 — confirmado, España: 12 uds SKU-451 + 5 uds SKU-208.\nPED-1002 — pendiente, LATAM: 25 uds SKU-451.\nPED-1003 — pendiente, España: 2 uds SKU-451.\n\nTres pedidos, cuatro líneas. SKU-451 concentra las tres líneas (39 uds en total); SKU-208 aparece en una sola línea (5 uds).\n\nRiesgo de stock: SKU-451\n\nDisponible 4 rollos frente a punto de reposición 20 y obj",
+   "herramientas": []
+  },
+  {
+   "ms": 4324,
+   "ok": true,
+   "modelo": "space-bunny-free",
+   "respuesta": "Comparativa para la propuesta pendiente\n\nPROP-001 — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80, estado pendiente.\n\nProveedores que cubren SKU-451:\n- PROV-01 Textiles Sierra S.L.: 4 días de plazo, 3.400 céntimos por rollo (34,00 €), mínimo 10 unidades. Es el único proveedor de los datos vigentes para este SKU, por lo que no hay alternativa con la que comparar precio ni plazo.\n\nCost",
    "herramientas": []
   }
  ],
@@ -186,7 +182,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-10T12:38:04.300Z",
+   "occurred_at": "2026-10-10T21:48:26.479Z",
    "actor": "GAMMA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -194,7 +190,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-10T12:37:55.316Z",
+   "occurred_at": "2026-10-10T21:48:22.141Z",
    "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -202,7 +198,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-10T12:37:42.197Z",
+   "occurred_at": "2026-10-10T21:48:18.047Z",
    "actor": "ALPHA",
    "action": "analisis_completado",
    "entity_type": "agent",
@@ -210,7 +206,7 @@
    "details_json": "{\"model\":\"space-bunny-free\"}"
   },
   {
-   "occurred_at": "2026-10-10T12:37:06.889Z",
+   "occurred_at": "2026-10-10T21:47:45.427Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
