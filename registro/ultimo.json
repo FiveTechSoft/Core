@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-11T22:01:56.594Z",
+ "ejecutado_en": "2026-10-12T06:04:45.735Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 14,
+   "ms": 25,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,13 +18,13 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 36075,
+   "ms": 43041,
    "resultado": {
     "ultima_llamada": {
-     "ms": 2917,
+     "ms": 24900,
      "ok": true,
-     "modelo": "nemotron-3.5-lightning-free",
-     "respuesta": "**Modo actual:** supervisado  \n**Estado de stock SKU-451:** on_hand 18, reserved 14, available 4. Punto de reorden 20, target_stock 80, needs_restock 1.  \n**Órdenes:** PED-1001 (12 u.), PED-1002 (25 u., pendiente LATAM), PED-1003 (2 u., pendiente España).  \n**Propuestas:** Ya existe PROP-001 con status \"pendiente\" para SKU-451, propuesta de 80 unidades por disponibilidad justa y riesgo de rotura. ",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "**Estado actual (exacto):**\n\n- **Modo:** supervisado.\n- **Riesgo de rotura detectado — SKU-451 (Tejio técnico azul, rollo):**\n  - on_hand: 18 | reserved: 14 | available: 4\n  - reorder_point: 20 | target_stock: 80 | needs_restock: 1\n  - Pedidos en curso: PED-1001 (12, confirmado), PED-1002 (25, pendiente), PED-1003 (2, pendiente).\n- **SKU-208** (available 31, RP 15) y **SKU-713** (available 24, RP ",
      "herramientas": []
     },
     "estado_agente": {
@@ -36,13 +36,13 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 8111,
+   "ms": 16319,
    "resultado": {
     "ultima_llamada": {
-     "ms": 8098,
+     "ms": 16307,
      "ok": true,
-     "modelo": "nemotron-3.5-lightning-free",
-     "respuesta": "**Resumen de la cartera de pedidos**\n\n| Order ID | SKU | Cantidad | Estado | Región |\n|----------|-----|----------|--------|--------|\n| PED‑1001 | SKU‑451 | 12 | confirmado | España |\n| PED‑1001 | SKU‑208 | 5  | confirmado | España |\n| PED‑1002 | SKU‑451 | 25 | pendiente | LATAM |\n| PED‑1003 | SKU‑451 | 2  | pendiente | España |\n\n**Riesgo de stock (basado en los datos vigentes de inventario)**  \n\n",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "Resumen de pedidos vigentes:\n\n- **PED-1001 — España, confirmado:** 12 uds. de SKU-451 y 5 uds. de SKU-208.\n- **PED-1002 — LATAM, pendiente:** 25 uds. de SKU-451.\n- **PED-1003 — España, pendiente:** 2 uds. de SKU-451.\n\n**Riesgo de stock:**\n\n- **SKU-451:** disponible 4, frente a un punto de reposición de 20 y un stock objetivo de 80. Es el único SKU con `needs_restock`.\n- **PED-1001 y PED-1002** afe",
      "herramientas": []
     },
     "estado_agente": {
@@ -54,13 +54,13 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 5170,
+   "ms": 6300,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5159,
+     "ms": 6289,
      "ok": true,
-     "modelo": "nemotron-3.5-lightning-free",
-     "respuesta": "**Comparativa de proveedores para la propuesta pendiente PROP‑001 (SKU‑451):**\n\n- **Proveedor:** Textiles Sierra S.L. (ID PROV‑01)  \n- **Plazo de entrega (lead‑days):** 4 días  \n- **Costo unitario:** 3 400 céntimos (34 €) por rollo  \n- **Cantidad mínima de pedido:** 10 rollos  \n\nNo aparecen otros proveedores para el SKU‑451 en los datos vigentes, por lo que Textiles Sierra S.L. es el proveedor que",
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "Con los datos vigentes hay una única propuesta pendiente:\n\n**PROP-001 — SKU-451 (Tejido técnico azul, rollo)**\n- Cantidad propuesta: 80 unidades\n- Situación de stock: 18 en mano, 14 reservados, 4 disponibles; punto de reposición 20, stock objetivo 80. Needs_restock activo.\n\n**Comparativa de proveedores para SKU-451:**\n- Único proveedor registrado con esa referencia: **PROV-01, Textiles Sierra S.L.",
      "herramientas": []
     },
     "estado_agente": {
@@ -72,33 +72,33 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 33142,
+   "ms": 18127,
    "ok": true,
-   "modelo": "nemotron-3.5-lightning-free",
+   "modelo": "mimo-v2.6-flash-free",
    "respuesta": "",
    "herramientas": [
     "proponer_reposicion"
    ]
   },
   {
-   "ms": 2917,
+   "ms": 24900,
    "ok": true,
-   "modelo": "nemotron-3.5-lightning-free",
-   "respuesta": "**Modo actual:** supervisado  \n**Estado de stock SKU-451:** on_hand 18, reserved 14, available 4. Punto de reorden 20, target_stock 80, needs_restock 1.  \n**Órdenes:** PED-1001 (12 u.), PED-1002 (25 u., pendiente LATAM), PED-1003 (2 u., pendiente España).  \n**Propuestas:** Ya existe PROP-001 con status \"pendiente\" para SKU-451, propuesta de 80 unidades por disponibilidad justa y riesgo de rotura. ",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "**Estado actual (exacto):**\n\n- **Modo:** supervisado.\n- **Riesgo de rotura detectado — SKU-451 (Tejio técnico azul, rollo):**\n  - on_hand: 18 | reserved: 14 | available: 4\n  - reorder_point: 20 | target_stock: 80 | needs_restock: 1\n  - Pedidos en curso: PED-1001 (12, confirmado), PED-1002 (25, pendiente), PED-1003 (2, pendiente).\n- **SKU-208** (available 31, RP 15) y **SKU-713** (available 24, RP ",
    "herramientas": []
   },
   {
-   "ms": 8098,
+   "ms": 16307,
    "ok": true,
-   "modelo": "nemotron-3.5-lightning-free",
-   "respuesta": "**Resumen de la cartera de pedidos**\n\n| Order ID | SKU | Cantidad | Estado | Región |\n|----------|-----|----------|--------|--------|\n| PED‑1001 | SKU‑451 | 12 | confirmado | España |\n| PED‑1001 | SKU‑208 | 5  | confirmado | España |\n| PED‑1002 | SKU‑451 | 25 | pendiente | LATAM |\n| PED‑1003 | SKU‑451 | 2  | pendiente | España |\n\n**Riesgo de stock (basado en los datos vigentes de inventario)**  \n\n",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Resumen de pedidos vigentes:\n\n- **PED-1001 — España, confirmado:** 12 uds. de SKU-451 y 5 uds. de SKU-208.\n- **PED-1002 — LATAM, pendiente:** 25 uds. de SKU-451.\n- **PED-1003 — España, pendiente:** 2 uds. de SKU-451.\n\n**Riesgo de stock:**\n\n- **SKU-451:** disponible 4, frente a un punto de reposición de 20 y un stock objetivo de 80. Es el único SKU con `needs_restock`.\n- **PED-1001 y PED-1002** afe",
    "herramientas": []
   },
   {
-   "ms": 5159,
+   "ms": 6289,
    "ok": true,
-   "modelo": "nemotron-3.5-lightning-free",
-   "respuesta": "**Comparativa de proveedores para la propuesta pendiente PROP‑001 (SKU‑451):**\n\n- **Proveedor:** Textiles Sierra S.L. (ID PROV‑01)  \n- **Plazo de entrega (lead‑days):** 4 días  \n- **Costo unitario:** 3 400 céntimos (34 €) por rollo  \n- **Cantidad mínima de pedido:** 10 rollos  \n\nNo aparecen otros proveedores para el SKU‑451 en los datos vigentes, por lo que Textiles Sierra S.L. es el proveedor que",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Con los datos vigentes hay una única propuesta pendiente:\n\n**PROP-001 — SKU-451 (Tejido técnico azul, rollo)**\n- Cantidad propuesta: 80 unidades\n- Situación de stock: 18 en mano, 14 reservados, 4 disponibles; punto de reposición 20, stock objetivo 80. Needs_restock activo.\n\n**Comparativa de proveedores para SKU-451:**\n- Único proveedor registrado con esa referencia: **PROV-01, Textiles Sierra S.L.",
    "herramientas": []
   }
  ],
@@ -106,18 +106,6 @@
   {
    "url": "https://api.fivetechsoft.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 429
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 400
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 400
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
@@ -152,14 +140,6 @@
   {
    "tipo": "consola",
    "mensaje": "Failed to load resource: net::ERR_FAILED"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 429 ()"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 400 ()"
   }
  ],
  "por_agente": [
@@ -178,31 +158,31 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-11T22:01:56.283Z",
+   "occurred_at": "2026-10-12T06:04:45.562Z",
    "actor": "GAMMA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "GAMMA",
-   "details_json": "{\"model\":\"nemotron-3.5-lightning-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-11T22:01:51.111Z",
+   "occurred_at": "2026-10-12T06:04:39.263Z",
    "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "BETA",
-   "details_json": "{\"model\":\"nemotron-3.5-lightning-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-11T22:01:42.999Z",
+   "occurred_at": "2026-10-12T06:04:22.942Z",
    "actor": "ALPHA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "ALPHA",
-   "details_json": "{\"model\":\"nemotron-3.5-lightning-free\"}"
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-11T22:01:06.927Z",
+   "occurred_at": "2026-10-12T06:03:39.903Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
