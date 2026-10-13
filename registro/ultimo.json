@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-13T14:17:08.069Z",
+ "ejecutado_en": "2026-10-13T22:48:55.485Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
- "veredicto": "PARCIAL",
+ "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
- "eventos_despues": 3,
+ "eventos_despues": 2,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 16,
+   "ms": 68,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 5414,
+   "ms": 5798,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5408,
+     "ms": 5789,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 5204,
+   "ms": 5337,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5199,
+     "ms": 5333,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -50,39 +50,35 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 15114,
+   "ms": 5381,
    "resultado": {
     "ultima_llamada": {
-     "ms": 15103,
-     "ok": true,
-     "modelo": "longcat-2.5-preview-free",
-     "respuesta": "Para la única propuesta pendiente registrada (PROP-001, SKU-451 – Tejido técnico azul, rollo), los datos vigentes muestran un solo proveedor aplicable:\n\n- **Textiles Sierra S.L. (PROV-01)**: plazo de entrega de **4 días**, coste unitario de **3400 céntimos**, cantidad mínima de pedido de **10 unidades**.\n\nNo consta en los datos vigentes ningún otro proveedor para el SKU-451, por lo que no es posib",
-     "herramientas": []
+     "ms": 5377,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
-     "actor": "GAMMA",
-     "action": "analisis_completado"
+     "actor": "BETA",
+     "action": "pedido_generado"
     }
    }
   }
  ],
  "llamadas_modelo": [
   {
-   "ms": 5408,
+   "ms": 5789,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 5199,
+   "ms": 5333,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 15103,
-   "ok": true,
-   "modelo": "longcat-2.5-preview-free",
-   "respuesta": "Para la única propuesta pendiente registrada (PROP-001, SKU-451 – Tejido técnico azul, rollo), los datos vigentes muestran un solo proveedor aplicable:\n\n- **Textiles Sierra S.L. (PROV-01)**: plazo de entrega de **4 días**, coste unitario de **3400 céntimos**, cantidad mínima de pedido de **10 unidades**.\n\nNo consta en los datos vigentes ningún otro proveedor para el SKU-451, por lo que no es posib",
-   "herramientas": []
+   "ms": 5377,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
   }
  ],
  "red_api_modelo": [
@@ -259,10 +255,6 @@
  ],
  "por_agente": [
   {
-   "actor": "GAMMA",
-   "n": 1
-  },
-  {
    "actor": "BETA",
    "n": 1
   },
@@ -273,15 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-13T14:17:07.831Z",
-   "actor": "GAMMA",
-   "action": "analisis_completado",
-   "entity_type": "agent",
-   "entity_id": "GAMMA",
-   "details_json": "{\"model\":\"longcat-2.5-preview-free\"}"
-  },
-  {
-   "occurred_at": "2026-10-13T14:16:42.097Z",
+   "occurred_at": "2026-10-13T22:48:38.615Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
