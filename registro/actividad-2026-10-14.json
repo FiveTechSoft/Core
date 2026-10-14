@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-14T11:58:28.902Z",
+ "ejecutado_en": "2026-10-14T17:15:26.660Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 21,
+   "ms": 30,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4852,
+   "ms": 4488,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4845,
+     "ms": 4483,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 4888,
+   "ms": 5246,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4882,
+     "ms": 5242,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4307,
+   "ms": 4262,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4304,
+     "ms": 4258,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 4845,
+   "ms": 4483,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 4882,
+   "ms": 5242,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 4304,
+   "ms": 4258,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
@@ -123,16 +123,8 @@
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -192,10 +184,6 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 400
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
@@ -241,6 +229,18 @@
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
    "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
   }
  ],
  "errores_pagina": [
@@ -251,10 +251,6 @@
   {
    "tipo": "consola",
    "mensaje": "Failed to load resource: the server responded with a status of 403 ()"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 400 ()"
   }
  ],
  "por_agente": [
@@ -269,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-14T11:58:14.661Z",
+   "occurred_at": "2026-10-14T17:15:12.289Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
