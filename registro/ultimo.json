@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-15T17:05:09.932Z",
+ "ejecutado_en": "2026-10-15T21:27:00.447Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
- "eventos_despues": 3,
+ "eventos_despues": 2,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 11,
+   "ms": 37,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 5712,
+   "ms": 14170,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5707,
+     "ms": 5720,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,58 +34,111 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 8766,
+   "ms": 5388,
    "resultado": {
     "ultima_llamada": {
-     "ms": 8757,
-     "ok": true,
-     "modelo": "space-bunny-free",
-     "respuesta": "## Resumen de cartera de pedidos\n\n**4 líneas en 3 pedidos, 44 unidades en total.**\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\nConcentración: **SKU-451 acumula 39 de las 44 unidades*",
-     "herramientas": []
+     "ms": 5384,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "analisis_completado"
+     "action": "pedido_generado"
     }
    }
   },
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 5476,
+   "ms": 5471,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5471,
+     "ms": 5466,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "analisis_completado"
+     "action": "pedido_generado"
     }
    }
   }
  ],
  "llamadas_modelo": [
   {
-   "ms": 5707,
+   "ms": 8447,
+   "ok": true,
+   "modelo": "space-bunny-free",
+   "respuesta": "",
+   "herramientas": [
+    "proponer_reposicion"
+   ]
+  },
+  {
+   "ms": 5720,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 8757,
-   "ok": true,
-   "modelo": "space-bunny-free",
-   "respuesta": "## Resumen de cartera de pedidos\n\n**4 líneas en 3 pedidos, 44 unidades en total.**\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\nConcentración: **SKU-451 acumula 39 de las 44 unidades*",
-   "herramientas": []
+   "ms": 5384,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 5471,
+   "ms": 5466,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
  ],
  "red_api_modelo": [
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 200
+  },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/models",
    "estado": 200
@@ -197,54 +250,6 @@
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/models",
-   "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
   }
  ],
  "errores_pagina": [
@@ -260,7 +265,7 @@
  "por_agente": [
   {
    "actor": "BETA",
-   "n": 2
+   "n": 1
   },
   {
    "actor": "ALPHA",
@@ -269,15 +274,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-15T17:05:04.187Z",
-   "actor": "BETA",
-   "action": "analisis_completado",
-   "entity_type": "agent",
-   "entity_id": "BETA",
-   "details_json": "{\"model\":\"space-bunny-free\"}"
-  },
-  {
-   "occurred_at": "2026-10-15T17:04:49.709Z",
+   "occurred_at": "2026-10-15T21:26:35.133Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
