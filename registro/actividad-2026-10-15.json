@@ -1,0 +1,284 @@
+{
+ "app": "Core",
+ "ejecutado_en": "2026-10-15T04:45:25.199Z",
+ "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
+ "veredicto": "CON_ERRORES",
+ "eventos_antes": 1,
+ "eventos_despues": 2,
+ "pendientes_aprobacion": 1,
+ "pasos": [
+  {
+   "paso": "BETA genera un pedido (ciclo autonomo)",
+   "ok": true,
+   "ms": 37,
+   "resultado": {
+    "pedidos_nuevos": 1
+   }
+  },
+  {
+   "paso": "ALPHA responde con el modelo real",
+   "ok": true,
+   "ms": 5104,
+   "resultado": {
+    "ultima_llamada": {
+     "ms": 5099,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
+    },
+    "estado_agente": {
+     "actor": "BETA",
+     "action": "pedido_generado"
+    }
+   }
+  },
+  {
+   "paso": "BETA responde con el modelo real",
+   "ok": true,
+   "ms": 4751,
+   "resultado": {
+    "ultima_llamada": {
+     "ms": 4747,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
+    },
+    "estado_agente": {
+     "actor": "BETA",
+     "action": "pedido_generado"
+    }
+   }
+  },
+  {
+   "paso": "GAMMA responde con el modelo real",
+   "ok": true,
+   "ms": 5006,
+   "resultado": {
+    "ultima_llamada": {
+     "ms": 5003,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
+    },
+    "estado_agente": {
+     "actor": "BETA",
+     "action": "pedido_generado"
+    }
+   }
+  }
+ ],
+ "llamadas_modelo": [
+  {
+   "ms": 5099,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
+  },
+  {
+   "ms": 4747,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
+  },
+  {
+   "ms": 5003,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
+  }
+ ],
+ "red_api_modelo": [
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  }
+ ],
+ "errores_pagina": [
+  {
+   "tipo": "consola",
+   "mensaje": "Failed to load resource: net::ERR_FAILED"
+  },
+  {
+   "tipo": "consola",
+   "mensaje": "Failed to load resource: the server responded with a status of 403 ()"
+  }
+ ],
+ "por_agente": [
+  {
+   "actor": "BETA",
+   "n": 1
+  },
+  {
+   "actor": "ALPHA",
+   "n": 1
+  }
+ ],
+ "eventos_recientes": [
+  {
+   "occurred_at": "2026-10-15T04:45:10.040Z",
+   "actor": "BETA",
+   "action": "pedido_generado",
+   "entity_type": "sales_order",
+   "entity_id": "PED-1003",
+   "details_json": "{\"sku\":\"SKU-451\",\"quantity\":2,\"source\":\"motor_local\",\"reserved_before\":12,\"reserved\":14}"
+  },
+  {
+   "occurred_at": "2030-07-15T09:30:00Z",
+   "actor": "ALPHA",
+   "action": "propuesta_creada",
+   "entity_type": "purchase_proposal",
+   "entity_id": "PROP-001",
+   "details_json": "{\"sku\":\"SKU-451\",\"cantidad\":80}"
+  }
+ ]
+}

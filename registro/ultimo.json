@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-14T21:44:29.258Z",
+ "ejecutado_en": "2026-10-15T04:45:25.199Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 17,
+   "ms": 37,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 5465,
+   "ms": 5104,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5460,
+     "ms": 5099,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 5282,
+   "ms": 4751,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5277,
+     "ms": 4747,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4915,
+   "ms": 5006,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4910,
+     "ms": 5003,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 5460,
+   "ms": 5099,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 5277,
+   "ms": 4747,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 4910,
+   "ms": 5003,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
@@ -265,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-14T21:44:13.318Z",
+   "occurred_at": "2026-10-15T04:45:10.040Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
