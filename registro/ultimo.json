@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-15T11:35:24.713Z",
+ "ejecutado_en": "2026-10-15T17:05:09.932Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
- "veredicto": "CON_ERRORES",
+ "veredicto": "PARCIAL",
  "eventos_antes": 1,
- "eventos_despues": 2,
+ "eventos_despues": 3,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 55,
+   "ms": 11,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4558,
+   "ms": 5712,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4550,
+     "ms": 5707,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,49 +34,53 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 4349,
+   "ms": 8766,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4345,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 8757,
+     "ok": true,
+     "modelo": "space-bunny-free",
+     "respuesta": "## Resumen de cartera de pedidos\n\n**4 líneas en 3 pedidos, 44 unidades en total.**\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\nConcentración: **SKU-451 acumula 39 de las 44 unidades*",
+     "herramientas": []
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "pedido_generado"
+     "action": "analisis_completado"
     }
    }
   },
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4877,
+   "ms": 5476,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4872,
+     "ms": 5471,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "pedido_generado"
+     "action": "analisis_completado"
     }
    }
   }
  ],
  "llamadas_modelo": [
   {
-   "ms": 4550,
+   "ms": 5707,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 4345,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
+   "ms": 8757,
+   "ok": true,
+   "modelo": "space-bunny-free",
+   "respuesta": "## Resumen de cartera de pedidos\n\n**4 líneas en 3 pedidos, 44 unidades en total.**\n\n| Pedido | SKU | Cant. | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 | 12 | confirmado | España |\n| PED-1001 | SKU-208 | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\nConcentración: **SKU-451 acumula 39 de las 44 unidades*",
+   "herramientas": []
   },
   {
-   "ms": 4872,
+   "ms": 5471,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
@@ -127,8 +131,16 @@
    "estado": 403
   },
   {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -215,31 +227,23 @@
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/models",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 200
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   }
  ],
@@ -256,7 +260,7 @@
  "por_agente": [
   {
    "actor": "BETA",
-   "n": 1
+   "n": 2
   },
   {
    "actor": "ALPHA",
@@ -265,7 +269,15 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-15T11:35:10.591Z",
+   "occurred_at": "2026-10-15T17:05:04.187Z",
+   "actor": "BETA",
+   "action": "analisis_completado",
+   "entity_type": "agent",
+   "entity_id": "BETA",
+   "details_json": "{\"model\":\"space-bunny-free\"}"
+  },
+  {
+   "occurred_at": "2026-10-15T17:04:49.709Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
