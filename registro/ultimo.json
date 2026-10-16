@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-16T04:37:08.145Z",
+ "ejecutado_en": "2026-10-16T11:29:55.614Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
- "veredicto": "CON_ERRORES",
+ "veredicto": "PARCIAL",
  "eventos_antes": 1,
- "eventos_despues": 2,
+ "eventos_despues": 3,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 162,
+   "ms": 39,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 5271,
+   "ms": 6192,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5267,
+     "ms": 6187,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,49 +34,53 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 4312,
+   "ms": 19590,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4307,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 19581,
+     "ok": true,
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "**Resumen de pedidos vigentes**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de inventario**\n\n- **SKU-451**: 18 en existencias",
+     "herramientas": []
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "pedido_generado"
+     "action": "analisis_completado"
     }
    }
   },
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4354,
+   "ms": 5394,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4351,
+     "ms": 5392,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "pedido_generado"
+     "action": "analisis_completado"
     }
    }
   }
  ],
  "llamadas_modelo": [
   {
-   "ms": 5267,
+   "ms": 6187,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 4307,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
+   "ms": 19581,
+   "ok": true,
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "**Resumen de pedidos vigentes**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de inventario**\n\n- **SKU-451**: 18 en existencias",
+   "herramientas": []
   },
   {
-   "ms": 4351,
+   "ms": 5392,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
@@ -127,8 +131,24 @@
    "estado": 403
   },
   {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -176,70 +196,54 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   }
  ],
@@ -256,7 +260,7 @@
  "por_agente": [
   {
    "actor": "BETA",
-   "n": 1
+   "n": 2
   },
   {
    "actor": "ALPHA",
@@ -265,7 +269,15 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-16T04:36:53.912Z",
+   "occurred_at": "2026-10-16T11:29:49.987Z",
+   "actor": "BETA",
+   "action": "analisis_completado",
+   "entity_type": "agent",
+   "entity_id": "BETA",
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
+  },
+  {
+   "occurred_at": "2026-10-16T11:29:24.194Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
