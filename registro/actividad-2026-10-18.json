@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-18T11:13:15.950Z",
+ "ejecutado_en": "2026-10-18T15:55:07.605Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
- "veredicto": "CON_ERRORES",
+ "veredicto": "PARCIAL",
  "eventos_antes": 1,
- "eventos_despues": 2,
+ "eventos_despues": 3,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 48,
+   "ms": 31,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 28646,
+   "ms": 4050,
    "resultado": {
     "ultima_llamada": {
-     "ms": 28640,
+     "ms": 4045,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 3702,
+   "ms": 3509,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3698,
+     "ms": 3504,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -50,35 +50,39 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 3246,
+   "ms": 18330,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3243,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 18321,
+     "ok": true,
+     "modelo": "longcat-2.5-preview-free",
+     "respuesta": "**Análisis de la propuesta pendiente PROP-001 (SKU-451)**\n\nDatos vigentes:\n\n| Campo | Valor |\n|-------|-------|\n| SKU | SKU-451 (Tejido técnico azul, rollo) |\n| Cantidad propuesta | 80 unidades |\n| Estado | Pendiente |\n| Disponible actual | 4 rollos |\n| Punto de reposición | 20 |\n| Stock objetivo | 80 |\n\n---\n\n**Proveedores disponibles para SKU-451**\n\n| Proveedor | Plazo (lead_days) | Coste unitari",
+     "herramientas": []
     },
     "estado_agente": {
-     "actor": "BETA",
-     "action": "pedido_generado"
+     "actor": "GAMMA",
+     "action": "analisis_completado"
     }
    }
   }
  ],
  "llamadas_modelo": [
   {
-   "ms": 28640,
+   "ms": 4045,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 3698,
+   "ms": 3504,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 3243,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
+   "ms": 18321,
+   "ok": true,
+   "modelo": "longcat-2.5-preview-free",
+   "respuesta": "**Análisis de la propuesta pendiente PROP-001 (SKU-451)**\n\nDatos vigentes:\n\n| Campo | Valor |\n|-------|-------|\n| SKU | SKU-451 (Tejido técnico azul, rollo) |\n| Cantidad propuesta | 80 unidades |\n| Estado | Pendiente |\n| Disponible actual | 4 rollos |\n| Punto de reposición | 20 |\n| Stock objetivo | 80 |\n\n---\n\n**Proveedores disponibles para SKU-451**\n\n| Proveedor | Plazo (lead_days) | Coste unitari",
+   "herramientas": []
   }
  ],
  "red_api_modelo": [
@@ -159,6 +163,10 @@
    "estado": 403
   },
   {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
    "url": "https://api.fivetechsoft.com/zen/v1/models",
    "estado": 200
   },
@@ -237,10 +245,6 @@
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
    "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/models",
-   "estado": 200
   }
  ],
  "errores_pagina": [
@@ -255,6 +259,10 @@
  ],
  "por_agente": [
   {
+   "actor": "GAMMA",
+   "n": 1
+  },
+  {
    "actor": "BETA",
    "n": 1
   },
@@ -265,7 +273,15 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-18T11:12:40.099Z",
+   "occurred_at": "2026-10-18T15:55:07.283Z",
+   "actor": "GAMMA",
+   "action": "analisis_completado",
+   "entity_type": "agent",
+   "entity_id": "GAMMA",
+   "details_json": "{\"model\":\"longcat-2.5-preview-free\"}"
+  },
+  {
+   "occurred_at": "2026-10-18T15:54:41.387Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
