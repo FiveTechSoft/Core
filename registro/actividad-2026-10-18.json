@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-18T04:39:12.864Z",
+ "ejecutado_en": "2026-10-18T11:13:15.950Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 25,
+   "ms": 48,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4505,
+   "ms": 28646,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4500,
+     "ms": 28640,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 3728,
+   "ms": 3702,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3724,
+     "ms": 3698,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 3519,
+   "ms": 3246,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3514,
+     "ms": 3243,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 4500,
+   "ms": 28640,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 3724,
+   "ms": 3698,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 3514,
+   "ms": 3243,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   }
@@ -159,10 +159,6 @@
    "estado": 403
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
    "url": "https://api.fivetechsoft.com/zen/v1/models",
    "estado": 200
   },
@@ -241,6 +237,10 @@
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
    "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
   }
  ],
  "errores_pagina": [
@@ -265,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-18T04:39:00.748Z",
+   "occurred_at": "2026-10-18T11:12:40.099Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
