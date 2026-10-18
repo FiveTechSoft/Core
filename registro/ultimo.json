@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-18T15:55:07.605Z",
+ "ejecutado_en": "2026-10-18T20:48:51.361Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 31,
+   "ms": 26,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4050,
+   "ms": 4362,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4045,
+     "ms": 4355,
      "ok": false,
      "error": "Servicio no disponible (HTTP 403)"
     },
@@ -34,33 +34,33 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 3509,
+   "ms": 7525,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3504,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 7513,
+     "ok": true,
+     "modelo": "deepseek-v4.1-flash-free",
+     "respuesta": "**Resumen de pedidos (según datos vigentes)**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul, rollo) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial, caja) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de disponibilidad**\n- ",
+     "herramientas": []
     },
     "estado_agente": {
      "actor": "BETA",
-     "action": "pedido_generado"
+     "action": "analisis_completado"
     }
    }
   },
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 18330,
+   "ms": 5895,
    "resultado": {
     "ultima_llamada": {
-     "ms": 18321,
-     "ok": true,
-     "modelo": "longcat-2.5-preview-free",
-     "respuesta": "**Análisis de la propuesta pendiente PROP-001 (SKU-451)**\n\nDatos vigentes:\n\n| Campo | Valor |\n|-------|-------|\n| SKU | SKU-451 (Tejido técnico azul, rollo) |\n| Cantidad propuesta | 80 unidades |\n| Estado | Pendiente |\n| Disponible actual | 4 rollos |\n| Punto de reposición | 20 |\n| Stock objetivo | 80 |\n\n---\n\n**Proveedores disponibles para SKU-451**\n\n| Proveedor | Plazo (lead_days) | Coste unitari",
-     "herramientas": []
+     "ms": 5888,
+     "ok": false,
+     "error": "Servicio no disponible (HTTP 403)"
     },
     "estado_agente": {
-     "actor": "GAMMA",
+     "actor": "BETA",
      "action": "analisis_completado"
     }
    }
@@ -68,21 +68,21 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 4045,
+   "ms": 4355,
    "ok": false,
    "error": "Servicio no disponible (HTTP 403)"
   },
   {
-   "ms": 3504,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
-  },
-  {
-   "ms": 18321,
+   "ms": 7513,
    "ok": true,
-   "modelo": "longcat-2.5-preview-free",
-   "respuesta": "**Análisis de la propuesta pendiente PROP-001 (SKU-451)**\n\nDatos vigentes:\n\n| Campo | Valor |\n|-------|-------|\n| SKU | SKU-451 (Tejido técnico azul, rollo) |\n| Cantidad propuesta | 80 unidades |\n| Estado | Pendiente |\n| Disponible actual | 4 rollos |\n| Punto de reposición | 20 |\n| Stock objetivo | 80 |\n\n---\n\n**Proveedores disponibles para SKU-451**\n\n| Proveedor | Plazo (lead_days) | Coste unitari",
+   "modelo": "deepseek-v4.1-flash-free",
+   "respuesta": "**Resumen de pedidos (según datos vigentes)**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul, rollo) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial, caja) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de disponibilidad**\n- ",
    "herramientas": []
+  },
+  {
+   "ms": 5888,
+   "ok": false,
+   "error": "Servicio no disponible (HTTP 403)"
   }
  ],
  "red_api_modelo": [
@@ -196,6 +196,38 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 403
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 403
   },
   {
@@ -209,38 +241,6 @@
   {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -259,12 +259,8 @@
  ],
  "por_agente": [
   {
-   "actor": "GAMMA",
-   "n": 1
-  },
-  {
    "actor": "BETA",
-   "n": 1
+   "n": 2
   },
   {
    "actor": "ALPHA",
@@ -273,15 +269,15 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-18T15:55:07.283Z",
-   "actor": "GAMMA",
+   "occurred_at": "2026-10-18T20:48:45.139Z",
+   "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
-   "entity_id": "GAMMA",
-   "details_json": "{\"model\":\"longcat-2.5-preview-free\"}"
+   "entity_id": "BETA",
+   "details_json": "{\"model\":\"deepseek-v4.1-flash-free\"}"
   },
   {
-   "occurred_at": "2026-10-18T15:54:41.387Z",
+   "occurred_at": "2026-10-18T20:48:33.253Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
