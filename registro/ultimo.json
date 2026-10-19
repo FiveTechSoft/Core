@@ -1,16 +1,16 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-18T20:48:51.361Z",
+ "ejecutado_en": "2026-10-19T04:47:02.116Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "PARCIAL",
  "eventos_antes": 1,
- "eventos_despues": 3,
+ "eventos_despues": 5,
  "pendientes_aprobacion": 1,
  "pasos": [
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 26,
+   "ms": 10,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,29 +18,31 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4362,
+   "ms": 24446,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4355,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 24436,
+     "ok": true,
+     "modelo": "mimo-v2.6-flash-free",
+     "respuesta": "Revisión de stock completada. Estado actual en modo **Supervisado**:\n\n**Análisis de disponibilidad**\n- **SKU-451 (Tejido técnico azul):** 18 en mano, 14 reservados → solo **4 disponibles**, frente a un punto de reposición de 20 y objetivo de 80. El flag `needs_restock` está activo. Hay compromiso real: PED-1001 (12 uds, confirmado, España) y PED-1002 (25 uds, pendiente, LATAM) superan con creces l",
+     "herramientas": []
     },
     "estado_agente": {
-     "actor": "BETA",
-     "action": "pedido_generado"
+     "actor": "ALPHA",
+     "action": "analisis_completado"
     }
    }
   },
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 7525,
+   "ms": 27169,
    "resultado": {
     "ultima_llamada": {
-     "ms": 7513,
+     "ms": 27160,
      "ok": true,
-     "modelo": "deepseek-v4.1-flash-free",
-     "respuesta": "**Resumen de pedidos (según datos vigentes)**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul, rollo) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial, caja) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de disponibilidad**\n- ",
+     "modelo": "beam-free",
+     "respuesta": "Resumen de pedidos (datos vigentes):\n\n- **PED-1001** (España, confirmado): SKU-451 ×12 y SKU-208 ×5.\n- **PED-1002** (LATAM, pendiente): SKU-451 ×25.\n- **PED-1003** (España, pendiente): SKU-451 ×2.\n\nRiesgo de stock:\n\n- **SKU-451 (Tejido técnico azul, rollo)**: disponible 4, punto de reposición 20, `needs_restock=1`. Demanda total en pedidos = 39 (12 + 25 + 2), muy superior al disponible. Riesgo alt",
      "herramientas": []
     },
     "estado_agente": {
@@ -52,15 +54,17 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 5895,
+   "ms": 1373,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5888,
-     "ok": false,
-     "error": "Servicio no disponible (HTTP 403)"
+     "ms": 1365,
+     "ok": true,
+     "modelo": "beam-free",
+     "respuesta": "Propuesta pendiente: **PROP-001** — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80.\n\nProveedores disponibles para SKU-451:\n- **PROV-01 Textiles Sierra S.L.** — plazo 4 días, coste unitario 34,00 €, pedido mínimo 10 unidades.\n\nNo constan otros proveedores para este SKU en los datos vigentes, por lo que no hay alternativa de comparación. La cantidad propuesta (80) supera el mínimo de pe",
+     "herramientas": []
     },
     "estado_agente": {
-     "actor": "BETA",
+     "actor": "GAMMA",
      "action": "analisis_completado"
     }
    }
@@ -68,21 +72,25 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 4355,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
-  },
-  {
-   "ms": 7513,
+   "ms": 24436,
    "ok": true,
-   "modelo": "deepseek-v4.1-flash-free",
-   "respuesta": "**Resumen de pedidos (según datos vigentes)**\n\n| Pedido | SKU | Cantidad | Estado | Región |\n|---|---|---|---|---|\n| PED-1001 | SKU-451 (Tejido técnico azul, rollo) | 12 | confirmado | España |\n| PED-1001 | SKU-208 (Cierre industrial, caja) | 5 | confirmado | España |\n| PED-1002 | SKU-451 | 25 | pendiente | LATAM |\n| PED-1003 | SKU-451 | 2 | pendiente | España |\n\n**Situación de disponibilidad**\n- ",
+   "modelo": "mimo-v2.6-flash-free",
+   "respuesta": "Revisión de stock completada. Estado actual en modo **Supervisado**:\n\n**Análisis de disponibilidad**\n- **SKU-451 (Tejido técnico azul):** 18 en mano, 14 reservados → solo **4 disponibles**, frente a un punto de reposición de 20 y objetivo de 80. El flag `needs_restock` está activo. Hay compromiso real: PED-1001 (12 uds, confirmado, España) y PED-1002 (25 uds, pendiente, LATAM) superan con creces l",
    "herramientas": []
   },
   {
-   "ms": 5888,
-   "ok": false,
-   "error": "Servicio no disponible (HTTP 403)"
+   "ms": 27160,
+   "ok": true,
+   "modelo": "beam-free",
+   "respuesta": "Resumen de pedidos (datos vigentes):\n\n- **PED-1001** (España, confirmado): SKU-451 ×12 y SKU-208 ×5.\n- **PED-1002** (LATAM, pendiente): SKU-451 ×25.\n- **PED-1003** (España, pendiente): SKU-451 ×2.\n\nRiesgo de stock:\n\n- **SKU-451 (Tejido técnico azul, rollo)**: disponible 4, punto de reposición 20, `needs_restock=1`. Demanda total en pedidos = 39 (12 + 25 + 2), muy superior al disponible. Riesgo alt",
+   "herramientas": []
+  },
+  {
+   "ms": 1365,
+   "ok": true,
+   "modelo": "beam-free",
+   "respuesta": "Propuesta pendiente: **PROP-001** — SKU-451 (Tejido técnico azul, rollo), cantidad propuesta 80.\n\nProveedores disponibles para SKU-451:\n- **PROV-01 Textiles Sierra S.L.** — plazo 4 días, coste unitario 34,00 €, pedido mínimo 10 unidades.\n\nNo constan otros proveedores para este SKU en los datos vigentes, por lo que no hay alternativa de comparación. La cantidad propuesta (80) supera el mínimo de pe",
+   "herramientas": []
   }
  ],
  "red_api_modelo": [
@@ -92,107 +100,11 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
@@ -204,57 +116,13 @@
   },
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 403
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 403
   }
  ],
  "errores_pagina": [
   {
    "tipo": "consola",
    "mensaje": "Failed to load resource: net::ERR_FAILED"
-  },
-  {
-   "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 403 ()"
   }
  ],
  "por_agente": [
@@ -264,20 +132,40 @@
   },
   {
    "actor": "ALPHA",
+   "n": 2
+  },
+  {
+   "actor": "GAMMA",
    "n": 1
   }
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-18T20:48:45.139Z",
+   "occurred_at": "2026-10-19T04:47:01.911Z",
+   "actor": "GAMMA",
+   "action": "analisis_completado",
+   "entity_type": "agent",
+   "entity_id": "GAMMA",
+   "details_json": "{\"model\":\"beam-free\"}"
+  },
+  {
+   "occurred_at": "2026-10-19T04:47:00.537Z",
    "actor": "BETA",
    "action": "analisis_completado",
    "entity_type": "agent",
    "entity_id": "BETA",
-   "details_json": "{\"model\":\"deepseek-v4.1-flash-free\"}"
+   "details_json": "{\"model\":\"beam-free\"}"
   },
   {
-   "occurred_at": "2026-10-18T20:48:33.253Z",
+   "occurred_at": "2026-10-19T04:46:33.368Z",
+   "actor": "ALPHA",
+   "action": "analisis_completado",
+   "entity_type": "agent",
+   "entity_id": "ALPHA",
+   "details_json": "{\"model\":\"mimo-v2.6-flash-free\"}"
+  },
+  {
+   "occurred_at": "2026-10-19T04:46:08.922Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
