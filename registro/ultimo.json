@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-24T04:41:53.340Z",
+ "ejecutado_en": "2026-10-24T11:07:08.880Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 34,
+   "ms": 14,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 4548,
+   "ms": 4551,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4541,
+     "ms": 4546,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 4321,
+   "ms": 3828,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4316,
+     "ms": 3823,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4016,
+   "ms": 3996,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4011,
+     "ms": 3992,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 4541,
+   "ms": 4546,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 4316,
+   "ms": 3823,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 4011,
+   "ms": 3992,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   }
@@ -265,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-24T04:41:40.065Z",
+   "occurred_at": "2026-10-24T11:06:56.174Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
