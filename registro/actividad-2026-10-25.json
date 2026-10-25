@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-10-25T04:47:24.000Z",
+ "ejecutado_en": "2026-10-25T11:37:20.170Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 36,
+   "ms": 29,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 3925,
+   "ms": 4406,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3919,
+     "ms": 4397,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 3432,
+   "ms": 3928,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3428,
+     "ms": 3923,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 3527,
+   "ms": 3720,
    "resultado": {
     "ultima_llamada": {
-     "ms": 3522,
+     "ms": 3715,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 3919,
+   "ms": 4397,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 3428,
+   "ms": 3923,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 3522,
+   "ms": 3715,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   }
@@ -187,10 +187,6 @@
    "estado": 429
   },
   {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 429
-  },
-  {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
   },
@@ -241,6 +237,10 @@
   {
    "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
    "estado": 429
+  },
+  {
+   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "estado": 429
   }
  ],
  "errores_pagina": [
@@ -251,6 +251,10 @@
   {
    "tipo": "consola",
    "mensaje": "Failed to load resource: the server responded with a status of 429 ()"
+  },
+  {
+   "tipo": "consola",
+   "mensaje": "Access to fetch at 'https://api.fivetechsoft.com/zen/v1/chat/completions' from origin 'https://fivetechsoft.github.io' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
   }
  ],
  "por_agente": [
@@ -265,7 +269,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-10-25T04:47:12.858Z",
+   "occurred_at": "2026-10-25T11:37:07.819Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
