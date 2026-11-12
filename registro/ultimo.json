@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-11-11T19:39:20.419Z",
+ "ejecutado_en": "2026-11-12T07:16:28.488Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 36,
+   "ms": 10,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 6343,
+   "ms": 5630,
    "resultado": {
     "ultima_llamada": {
-     "ms": 6336,
+     "ms": 5625,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 5841,
+   "ms": 5545,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5837,
+     "ms": 5540,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 6229,
+   "ms": 5287,
    "resultado": {
     "ultima_llamada": {
-     "ms": 6224,
+     "ms": 5284,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 6336,
+   "ms": 5625,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 5837,
+   "ms": 5540,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 6224,
+   "ms": 5284,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   }
@@ -250,7 +250,7 @@
   },
   {
    "tipo": "consola",
-   "mensaje": "Failed to load resource: the server responded with a status of 429 ()"
+   "mensaje": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
   }
  ],
  "por_agente": [
@@ -265,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-11-11T19:39:01.676Z",
+   "occurred_at": "2026-11-12T07:16:11.790Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
