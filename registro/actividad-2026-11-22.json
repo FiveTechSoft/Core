@@ -1,6 +1,6 @@
 {
  "app": "Core",
- "ejecutado_en": "2026-11-22T06:55:47.274Z",
+ "ejecutado_en": "2026-11-22T19:45:19.907Z",
  "origen": "GitHub Actions (Chrome sin cabeza), no es el navegador del usuario",
  "veredicto": "CON_ERRORES",
  "eventos_antes": 1,
@@ -10,7 +10,7 @@
   {
    "paso": "BETA genera un pedido (ciclo autonomo)",
    "ok": true,
-   "ms": 11,
+   "ms": 77,
    "resultado": {
     "pedidos_nuevos": 1
    }
@@ -18,10 +18,10 @@
   {
    "paso": "ALPHA responde con el modelo real",
    "ok": true,
-   "ms": 5843,
+   "ms": 5961,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5837,
+     "ms": 5949,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -34,10 +34,10 @@
   {
    "paso": "BETA responde con el modelo real",
    "ok": true,
-   "ms": 5072,
+   "ms": 4918,
    "resultado": {
     "ultima_llamada": {
-     "ms": 5067,
+     "ms": 4915,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -50,10 +50,10 @@
   {
    "paso": "GAMMA responde con el modelo real",
    "ok": true,
-   "ms": 4998,
+   "ms": 4933,
    "resultado": {
     "ultima_llamada": {
-     "ms": 4993,
+     "ms": 4929,
      "ok": false,
      "error": "Servicio no disponible (HTTP 429)"
     },
@@ -66,17 +66,17 @@
  ],
  "llamadas_modelo": [
   {
-   "ms": 5837,
+   "ms": 5949,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 5067,
+   "ms": 4915,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   },
   {
-   "ms": 4993,
+   "ms": 4929,
    "ok": false,
    "error": "Servicio no disponible (HTTP 429)"
   }
@@ -127,16 +127,8 @@
    "estado": 429
   },
   {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
-   "estado": 429
-  },
-  {
    "url": "https://api.fivetechsupport.com/zen/v1/models",
    "estado": 200
-  },
-  {
-   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
-   "estado": 429
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -223,12 +215,20 @@
    "estado": 429
   },
   {
-   "url": "https://api.fivetechsoft.com/zen/v1/chat/completions",
+   "url": "https://api.fivetechsupport.com/zen/v1/models",
+   "estado": 200
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
    "estado": 429
   },
   {
-   "url": "https://api.fivetechsupport.com/zen/v1/models",
-   "estado": 200
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 429
+  },
+  {
+   "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
+   "estado": 429
   },
   {
    "url": "https://api.fivetechsupport.com/zen/v1/chat/completions",
@@ -265,7 +265,7 @@
  ],
  "eventos_recientes": [
   {
-   "occurred_at": "2026-11-22T06:55:31.176Z",
+   "occurred_at": "2026-11-22T19:45:03.686Z",
    "actor": "BETA",
    "action": "pedido_generado",
    "entity_type": "sales_order",
